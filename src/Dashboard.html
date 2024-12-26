@@ -46,6 +46,16 @@
               placeholder="Write something about yourself..."
             ></textarea>
           </div>
+
+          <!-- Update Bio Button -->
+          <div class="mt-4">
+            <button
+              onclick="updateBio()"
+              class="w-full bg-green-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-700"
+            >
+              Update Bio
+            </button>
+          </div>
         </section>
 
         <!-- Startup Information -->
@@ -136,6 +146,18 @@
       function createStartup() {
         // Simulating an error
         showError("Failed to create startup. Please try again later.");
+      }
+
+      // Function to handle bio update
+      function updateBio() {
+        const bioContent = document.getElementById("bio").value;
+
+        if (bioContent.trim() === "") {
+          showError("Bio cannot be empty.");
+        } else {
+          // You would typically send the updated bio to a server here
+          showError("Bio updated successfully!", 3000);
+        }
       }
     </script>
   </body>
