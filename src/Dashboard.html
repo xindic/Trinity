@@ -10,51 +10,133 @@
     <title>Trinity</title>
   </head>
   <body class="bg-gray-100 min-h-screen">
-    <div class="flex flex-col md:flex-row">
-      <!-- Sidebar -->
-      <div class="bg-blue-40 text-white w-full md:w-1/4 h-screen p-4">
-        <h2 class="text-2xl font-bold mb-6">Dashboard</h2>
-        <nav>
-          <ul>
-            <li class="mb-4">
-              <a href="#" class="hover:text-blue-300">Home</a>
-            </li>
-            <li class="mb-4">
-              <a href="#" class="hover:text-blue-300">Profile</a>
-            </li>
-            <li class="mb-4">
-              <a href="#" class="hover:text-blue-300">Settings</a>
-            </li>
-            <li class="mb-4">
-              <a href="#" class="hover:text-blue-300">Logout</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header
+      class="bg-blue-600 text-white p-4 flex justify-between items-center"
+    >
+      <div class="text-2xl font-bold">Trinity</div>
+      <h2 class="text-xl">Welcome to the Dashboard</h2>
+    </header>
 
-      <!-- Main Content -->
-      <div class="flex-1 p-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">
-          Welcome to the Dashboard
-        </h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-xl font-bold mb-4">Card Title 1</h2>
-            <p class="text-gray-600">Some information about this card.</p>
+    <main class="p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Left Section: Profile and Startup Information -->
+      <aside class="col-span-1 space-y-6">
+        <!-- Profile Section -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+          <div class="flex items-center space-x-4">
+            <img
+              src="https://via.placeholder.com/60"
+              alt="Profile"
+              class="w-16 h-16 rounded-full"
+            />
+            <div>
+              <h3 class="text-2xl font-bold text-gray-800">Username</h3>
+              <p class="text-gray-600">Your profile details</p>
+            </div>
           </div>
-          <!-- Card 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-xl font-bold mb-4">Card Title 2</h2>
-            <p class="text-gray-600">Details about the second card.</p>
+
+          <!-- Bio Section -->
+          <div class="mt-4">
+            <label for="bio" class="block text-lg font-semibold text-gray-800"
+              >Bio</label
+            >
+            <textarea
+              id="bio"
+              rows="4"
+              class="mt-2 w-full p-2 border border-gray-300 rounded-lg resize-none"
+              placeholder="Write something about yourself..."
+            ></textarea>
           </div>
-          <!-- Card 3 -->
+        </section>
+
+        <!-- Startup Information -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">
+            Startup Information
+          </h3>
+          <p class="text-gray-600"><strong>Name:</strong> Your Startup Name</p>
+          <p class="text-gray-600"><strong>Position:</strong> Your Title</p>
+          <p class="text-gray-600">
+            <strong>Description:</strong> Brief description of your startup.
+          </p>
+        </section>
+
+        <!-- Manage and Create Startup -->
+        <section class="space-y-4 mt-4">
+          <button
+            onclick="createStartup()"
+            class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700"
+          >
+            Create Startup
+          </button>
+          <button
+            class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700"
+          >
+            Manage Startup
+          </button>
+
+          <!-- Error Message Div (Positioned below the buttons) -->
+          <div
+            id="error-notification"
+            class="hidden mt-4 bg-red-200 text-red-800 text-center py-3 px-6 rounded-lg shadow-md"
+          >
+            <p id="error-message" class="font-semibold">
+              Something went wrong. Please try again later.
+            </p>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Right Section: Achievements -->
+      <div class="col-span-2">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Achievements</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-xl font-bold mb-4">Card Title 3</h2>
-            <p class="text-gray-600">Additional info for the third card.</p>
+            <h4 class="text-xl font-bold mb-2">Achievement 1</h4>
+            <p class="text-gray-600">Details about the first achievement.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-bold mb-2">Achievement 2</h4>
+            <p class="text-gray-600">Details about the second achievement.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-bold mb-2">Achievement 3</h4>
+            <p class="text-gray-600">Details about the third achievement.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-bold mb-2">Achievement 4</h4>
+            <p class="text-gray-600">Details about the fourth achievement.</p>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+
+    <script>
+      /**
+       * Shows the error notification within the div.
+       * @param {string} message - The error message to display.
+       * @param {string} [duration=5000] - Duration to show the error message (in milliseconds).
+       */
+      function showError(message, duration = 5000) {
+        const notification = document.getElementById("error-notification");
+        const messageElement = document.getElementById("error-message");
+
+        // Set the error message text
+        messageElement.textContent = message || "An unknown error occurred.";
+
+        // Show the notification
+        notification.classList.remove("hidden");
+
+        // Hide the notification after the specified duration
+        setTimeout(() => {
+          notification.classList.add("hidden");
+        }, duration);
+      }
+
+      // Example function for "Create Startup" button to show an error
+      function createStartup() {
+        // Simulating an error
+        showError("Failed to create startup. Please try again later.");
+      }
+    </script>
   </body>
 </html>

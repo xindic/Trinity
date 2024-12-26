@@ -1,0 +1,32 @@
+<!-- Error Notification HTML -->
+<div
+  id="error-notification"
+  class="hidden fixed top-0 left-1/2 transform -translate-x-1/2 mt-6 bg-red-400 text-white text-center py-3 px-6 rounded-lg shadow-md w-3/4 sm:w-1/2 md:w-1/3"
+>
+  <p id="error-message" class="font-semibold">
+    Something went wrong. Please try again later.
+  </p>
+</div>
+
+<script>
+  /**
+   * Shows the error notification with a custom message.
+   * @param {string} message - The error message to display.
+   * @param {string} [duration=5000] - Duration to show the error message (in milliseconds).
+   */
+  function showError(message, duration = 5000) {
+    const notification = document.getElementById("error-notification");
+    const messageElement = document.getElementById("error-message");
+
+    // Set the error message text
+    messageElement.textContent = message || "An unknown error occurred.";
+
+    // Show the notification
+    notification.classList.remove("hidden");
+
+    // Hide the notification after the specified duration
+    setTimeout(() => {
+      notification.classList.add("hidden");
+    }, duration);
+  }
+</script>
