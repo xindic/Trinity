@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Trinity</title>
+  </head>
+  <body class="bg-gray-100 flex items-top justify-start min-h-screen">
+    <div class="bg-gray-200 p-8 shadow-lg text-center w-full h-20 flex gap-x-5">
+      <h1 class="font-semibold">Trinity</h1>
+      <button>
+        <a href="index.html">Home</a>
+      </button>
+      <div class="relative ml-auto">
+        <button id="userButton">User</button>
+
+        <div
+          id="dropdownMenu"
+          class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden"
+        >
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Settings</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get the user button and dropdown menu
+      const userButton = document.getElementById("userButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      // Add click event listener to toggle the dropdown visibility
+      userButton.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("hidden"); // Toggle 'hidden' class to show/hide the dropdown
+      });
+
+      // Close dropdown if clicked outside
+      window.addEventListener("click", function (event) {
+        if (
+          !userButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
