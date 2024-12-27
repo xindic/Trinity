@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Bar Component</title>
+    <title>Search Bar with Filter and Results</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -12,49 +12,106 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
       rel="stylesheet"
     />
-    <style>
-      .search-bar {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .button.is-custom {
-        background-color: #011627;
-        color: white;
-      }
-
-      .button.is-custom:hover {
-        background-color: #002b47;
-        color: white;
-      }
-    </style>
   </head>
   <body>
     <div class="section">
       <div class="container">
-        <div class="search-bar">
-          <div class="field has-addons is-centered">
-            <div class="control has-icons-left is-expanded">
-              <input
-                class="input is-small is-rounded"
-                type="text"
-                placeholder="Search..."
-              />
-              <span class="icon is-small is-left">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </span>
-            </div>
-
-            <div class="control">
-              <button class="button is-small is-custom is-narrow">
+        <!-- Search Bar -->
+        <div class="box">
+          <div class="columns is-vcentered">
+            <div class="column is-narrow">
+              <button class="button is-small is-light" id="filterButton">
                 <span class="icon is-small">
-                  <i class="fa-solid fa-search"></i>
+                  <i class="fa-solid fa-filter"></i>
                 </span>
               </button>
             </div>
+
+            <div class="column is-expanded">
+              <div class="field has-addons">
+                <div class="control has-icons-left">
+                  <input
+                    class="input is-small is-rounded"
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search..."
+                    oninput="filterResults()"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </span>
+                </div>
+
+                <div class="control">
+                  <button class="button is-small is-black">
+                    <span class="icon is-small">
+                      <i class="fa-solid fa-search"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Filter Dropdown -->
+        <div id="filterDropdown" class="dropdown">
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <label class="label">Industry Type</label>
+                <div class="control">
+                  <div class="select is-small is-rounded">
+                    <select name="industryType">
+                      <option value="">Choose industry type...</option>
+                      <option value="service-based">Service-based</option>
+                      <option value="product-based">Product-based</option>
+                      <option value="hybrid">Hybrid</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-item">
+                <label class="label">Location</label>
+                <div class="control">
+                  <input
+                    class="input is-small is-rounded"
+                    type="text"
+                    placeholder="Enter location..."
+                    name="location"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Results Component -->
+        <div class="mt-5" id="resultsContainer">
+          <!-- Results will appear here dynamically -->
         </div>
       </div>
     </div>
+
+    <script>
+      // Get references to the filter button and the dropdown
+      const filterButton = document.getElementById("filterButton");
+      const filterDropdown = document.getElementById("filterDropdown");
+
+      // Toggle the dropdown menu visibility when clicking the filter button
+      filterButton.addEventListener("click", function () {
+        filterDropdown.classList.toggle("is-active");
+      });
+
+      // Close the dropdown if clicked outside
+      document.addEventListener("click", function (event) {
+        if (
+          !filterDropdown.contains(event.target) &&
+          !filterButton.contains(event.target)
+        ) {
+          filterDropdown.classList.remove("is-active");
+        }
+      });
+    </script>
   </body>
 </html>
