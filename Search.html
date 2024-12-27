@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar Component</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Make the search bar smaller in the x-axis */
+      .search-bar {
+        max-width: 400px; /* Adjust the max width to make it smaller */
+        margin: 0 auto; /* Center the search bar */
+      }
+
+      /* Custom button color */
+      .button.is-custom {
+        background-color: #011627; /* Dark navy background */
+        color: white; /* White text */
+      }
+
+      .button.is-custom:hover {
+        background-color: #002b47; /* Slightly lighter on hover */
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <div class="container">
+        <!-- Search Bar Container -->
+        <div class="search-bar">
+          <div class="field has-addons is-centered">
+            <!-- Input Field -->
+            <div class="control has-icons-left is-expanded">
+              <input
+                class="input is-small is-rounded"
+                type="text"
+                placeholder="Search..."
+              />
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
+
+            <!-- Button -->
+            <div class="control">
+              <button class="button is-small is-custom is-narrow">
+                <span class="icon is-small">
+                  <i class="fa-solid fa-search"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
