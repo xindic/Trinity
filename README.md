@@ -45,44 +45,154 @@ MySQL or any supported relational database
 
 **1. Clone the repository**
 
-```plaintext
+```bash
 git clone https://github.com/yourusername/your-repository.git
 cd your-repository
 ```
 
 **2. Install Backend dependencies**
 
-```plaintext
+```bash
 composer install
 ```
 
 **3. Setup environment file**
 
-```plaintext
+```bash
 cp .env.example .env
 ```
 
 **4. Generate application key**
 
-```plaintext
+```bash
 php artisan key:generate
 ```
 
 **5. Run migrations**
 
-```plaintext
+```bash
 php artisan migrate
 ```
 
 **6. Run application**
 
-```plaintext
+```bash
 php artisan serve
 ```
 
 ## Deployment links
 
 **Live Demo:** [Insert link here]
+
+## Deployment Steps
+
+**1. FTP Initial Upload**
+Upload all project files to the server using an FTP client.
+Ensure the `public` directory is properly uploaded to the correct web root.
+
+**2. Database Setup**
+
+Create a new MySQL database via your hosting provider or CLI.
+Set up the correct database credentials in the `.env` file.
+
+**3. Import Database Schema**
+
+Import the database schema using `phpMyAdmin` or via the command line.
+You can export the schema from the local environment and import it on the server using `phpMyAdmin`'s Import feature.
+
+**4. Configure Environment**
+
+Copy `.env.example` to `.env` on the server.
+Update the `.env` file with your server-specific values.
+
+**5. Install Dependencies**
+
+Run Composer to install PHP dependencies:
+
+```bash
+composer install --no-dev --optimize-autoloader
+```
+
+**6. Generate Application Key**
+
+Run the following command to generate a secure application key:
+
+```bash
+php artisan key:generate
+```
+
+**7. Set Permissions**
+
+Ensure proper permissions for the `storage` and `bootstrap/cache` directories:
+
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+**8. Run Migrations**
+
+Run migrations to create the necessary database tables:
+
+```bash
+php artisan migrate --force
+```
+
+**9. Clear Caches**
+
+Clear any cached configurations, routes, and views:
+
+```bash
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+**10. Set Up Web Server**
+
+Configure the web server apache to serve files from the `public` directory.
+
+**11. Set Up Git Version Control**
+
+Initialize Git and pull the project repository for future updates:
+
+```bash
+git init
+git remote add origin https://github.com/yourusername/your-repository.git
+git pull origin main
+```
+
+**12. Start Application**
+
+Your Laravel application is now live and should be accessible via the configured domain
+
+**13. Create a Custom `.htaccess` File for Laravel**
+
+Ensure you have a custom `.htaccess` file in the `public` directory to properly handle URL routing and redirects for Laravel.
+
+Add the following configuration to your `.htaccess` file:
+
+```apache
+# Laravel .htaccess
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Redirect to the public directory
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# Handle the Laravel default routing
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+```
+
+This `.htaccess` file ensures that Laravel's routing works properly, even when the application is placed in the root directory or a subdirectory. It also redirects all requests to the `public` directory and handles Laravel's routing by forwarding requests to `index.php`.
 
 ## Documented Features
 
