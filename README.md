@@ -42,28 +42,40 @@ MySQL or any supported relational database
 
 **1. Clone the repository**
 
+```plaintext
 git clone https://github.com/yourusername/your-repository.git
 cd your-repository
+```
 
 **2. Install Backend dependencies**
 
+```plaintext
 composer install
+```
 
 **3. Setup environment file**
 
+```plaintext
 cp .env.example .env
+```
 
 **4. Generate application key**
 
+```plaintext
 php artisan key:generate
+```
 
 **5. Run migrations**
 
+```plaintext
 php artisan migrate
+```
 
 **6. Run application**
 
+```plaintext
 php artisan serve
+```
 
 ## Deployment links
 
