@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Home</title>
+    <style>
+      /* Custom button and description styles */
+      .buttons .button {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: background-color 0.3s ease, border-radius 0.3s ease;
+        background-color: transparent;
+        color: black;
+        border-radius: 50px;
+      }
+
+      .buttons .button:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .buttons .button-design:hover {
+        background-color: #c76d7e;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .button-build:hover {
+        background-color: #4a90e2;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .button-jam:hover {
+        background-color: #f5a623;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .button-present:hover {
+        background-color: #50e3c2;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .is-selected {
+        background-color: rgb(233, 233, 233);
+        outline: none;
+        color: black;
+        pointer-events: none;
+      }
+
+      body {
+        background-color: white;
+      }
+
+      /* Hero section background with an image */
+      .hero.is-primary {
+        background: url("public/bg.png") center center / cover no-repeat;
+        background-color: transparent;
+        height: 100vh; /* Full height of the viewport */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Description text styling */
+      .description {
+        margin-top: 20px;
+        font-size: 1.25rem;
+        color: #333;
+      }
+
+      /* Quote Section Enhancements */
+      .quote-container {
+        position: relative;
+        padding: 30px 20px;
+        background: rgba(240, 240, 240, 0.8);
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .quote-divider {
+        margin: 20px 0;
+        height: 2px;
+        background: #6369d1;
+        width: 50px;
+      }
+
+      .quote-container i {
+        position: absolute;
+        top: -25px;
+        left: -20px;
+        opacity: 0.8;
+      }
+
+      .section {
+        background-color: #6369d1;
+        color: white;
+      }
+
+      .quote-container {
+        background: rgba(240, 240, 240, 0.8);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-size-1-desktop is-size-3-tablet has-text-black">
+            Think bigger. Launch smarter.
+          </h1>
+          <h2
+            class="subtitle is-size-4-desktop is-size-6-tablet has-text-black"
+          >
+            We empower startups and organizations to plan, collaborate, and
+            accelerate growth—together.
+          </h2>
+          <button class="button is-black is-large has-text-white">
+            Get started for free
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function showDescription(button) {
+        const buttons = document.querySelectorAll(".button");
+        buttons.forEach((btn) => {
+          btn.classList.remove("is-selected");
+        });
+
+        const selectedButton = document.querySelector(`.button-${button}`);
+        selectedButton.classList.add("is-selected");
+
+        let descriptionText = "";
+        if (button === "design") {
+          descriptionText =
+            "Launch and manage your startup ideas with your team, all in one collaborative space.";
+        } else if (button === "build") {
+          descriptionText =
+            "Plan your startup’s journey with clear, actionable steps and shared resources.";
+        } else if (button === "jam") {
+          descriptionText =
+            "Engage in discussions, exchange feedback, and refine your startup vision with your team.";
+        } else if (button === "present") {
+          descriptionText =
+            "Present your startup ideas with dynamic pitch decks, visual tools, and collaborative features.";
+        }
+
+        document.getElementById("description").textContent = descriptionText;
+      }
+    </script>
+  </body>
+</html>
