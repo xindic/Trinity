@@ -89,20 +89,21 @@ php artisan serve
 **1. User Management**
 
 Sign Up/Sign In: Users can register or log in using basic credentials.
-User Profile:
-Includes fields for Username, Email, Bio, and link to their associated startup (with position/title).
+User Profile: Includes fields for Username, Email, Bio, and link to their associated startup (with position/title).
 
 **2. Startup Profile**
 
 Startup Creation: Users can create and manage startup organizations.
 Profile Details: Includes Logo, Name, Description, Industries, and Funding Raised.
-Timeline Feature: Hardcoded and customizable milestones (e.g., "Founded", "First Funding Round").
+Timeline Feature: Hardcoded and customizable milestones.
+
 Sections:
-Posts Section
-Employee Section (roles and positions)
-Project Portfolio (for service-based startups)
-Product Showcase (for product-based startups)
-Hybrid Section (both Portfolio and Showcase for hybrid startups).
+
+- Posts Section
+- Employee Section (roles and positions)
+- Project Portfolio (for service-based startups)
+- Product Showcase (for product-based startups)
+- Hybrid Section (both Portfolio and Showcase for hybrid startups).
 
 **3. Feed**
 
@@ -113,12 +114,10 @@ Feed Visibility: Public visibility, allowing even anonymous users to view posts.
 **4. Search**
 
 Startup Search: Filter by Industry Type and Location.
-Anonymous Mode: Users can browse but cannot interact (comment, message, etc.).
 
 **5. Messaging**
 
-Direct Messaging: Allows users to send private messages to others and share posts.
-Restrictions: Messaging is not available for anonymous users.
+Allows users to send private messages to others and share posts.
 
 **6. Sharable Profiles and Posts**
 
