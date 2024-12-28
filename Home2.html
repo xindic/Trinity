@@ -72,6 +72,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column; /* Stack elements vertically */
       }
 
       /* Description text styling */
@@ -84,14 +85,16 @@
       /* Quote Section Enhancements */
       .quote-container {
         position: relative;
-        padding: 30px 20px;
+        padding: 15px 20px; /* Reduced padding */
         background: rgba(240, 240, 240, 0.8);
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 80%; /* Limit width to make it more compact */
+        margin-top: 20px;
       }
 
       .quote-divider {
-        margin: 20px 0;
+        margin: 15px 0;
         height: 2px;
         background: #6369d1;
         width: 50px;
@@ -99,9 +102,17 @@
 
       .quote-container i {
         position: absolute;
-        top: -25px;
-        left: -20px;
+        top: -20px;
+        left: -15px;
         opacity: 0.8;
+      }
+
+      .quote-container h1 {
+        font-size: 1.5rem; /* Reduced font size */
+      }
+
+      .quote-container p {
+        font-size: 1rem; /* Reduced font size */
       }
 
       .quote-container {
@@ -127,6 +138,21 @@
           <button class="button is-black is-large has-text-white">
             Get started for free
           </button>
+        </div>
+
+        <div class="quote-container has-text-centered">
+          <i class="fa-solid fa-quote-left fa-1x" style="color: #6369d1"></i>
+          <h1
+            class="title is-size-3-desktop is-size-5-tablet has-text-black mt-4"
+          >
+            Everything startups need to plan, collaborate, and grow is available
+            in one place.
+          </h1>
+          <div class="quote-divider"></div>
+          <p class="subtitle is-size-5 mt-4 has-text-grey-dark">
+            Collaborate smarter, execute faster, and achieve more with our
+            platform tailored for innovators and builders.
+          </p>
         </div>
       </div>
     </section>
@@ -160,27 +186,6 @@
           </button>
         </div>
         <div id="description" class="description has-text-centered"></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="columns is-vcentered is-centered mt-6">
-        <div class="column is-half has-text-left">
-          <div class="quote-container">
-            <i class="fa-solid fa-quote-left fa-3x" style="color: #6369d1"></i>
-            <h1
-              class="title is-size-1-desktop is-size-3-tablet has-text-black mt-4"
-            >
-              Everything startups need to plan, collaborate, and grow is
-              available in one place.
-            </h1>
-            <div class="quote-divider"></div>
-            <p class="subtitle is-size-5 mt-4 has-text-grey-dark">
-              Collaborate smarter, execute faster, and achieve more with our
-              platform tailored for innovators and builders.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
