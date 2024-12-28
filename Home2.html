@@ -66,9 +66,9 @@
 
       /* Hero section background with an image */
       .hero.is-primary {
-        background: url("public/bg.png") center center / cover no-repeat;
+        background: url("public/bg2.png") center center / cover no-repeat;
         background-color: transparent;
-        height: 100vh; /* Full height of the viewport */
+        height: 120vh; /* Full height of the viewport */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -104,11 +104,6 @@
         opacity: 0.8;
       }
 
-      .section {
-        background-color: #6369d1;
-        color: white;
-      }
-
       .quote-container {
         background: rgba(240, 240, 240, 0.8);
         color: black;
@@ -126,11 +121,65 @@
             class="subtitle is-size-4-desktop is-size-6-tablet has-text-black"
           >
             We empower startups and organizations to plan, collaborate, and
-            accelerate growth—together.
+            accelerate<br />
+            growth—together.
           </h2>
           <button class="button is-black is-large has-text-white">
             Get started for free
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="buttons is-centered mt-5">
+          <button
+            class="button is-rounded button-design"
+            onclick="showDescription('design')"
+          >
+            <strong>Start</strong>
+          </button>
+          <button
+            class="button is-rounded button-build"
+            onclick="showDescription('build')"
+          >
+            <strong>Plan</strong>
+          </button>
+          <button
+            class="button is-rounded button-jam"
+            onclick="showDescription('jam')"
+          >
+            <strong>Discuss</strong>
+          </button>
+          <button
+            class="button is-rounded button-present"
+            onclick="showDescription('present')"
+          >
+            <strong>Present</strong>
+          </button>
+        </div>
+        <div id="description" class="description has-text-centered"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="columns is-vcentered is-centered mt-6">
+        <div class="column is-half has-text-left">
+          <div class="quote-container">
+            <i class="fa-solid fa-quote-left fa-3x" style="color: #6369d1"></i>
+            <h1
+              class="title is-size-1-desktop is-size-3-tablet has-text-black mt-4"
+            >
+              Everything startups need to plan, collaborate, and grow is
+              available in one place.
+            </h1>
+            <div class="quote-divider"></div>
+            <p class="subtitle is-size-5 mt-4 has-text-grey-dark">
+              Collaborate smarter, execute faster, and achieve more with our
+              platform tailored for innovators and builders.
+            </p>
+          </div>
         </div>
       </div>
     </section>
