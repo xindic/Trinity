@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar</title>
+    <title>Log In</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
       rel="stylesheet"
@@ -11,41 +11,6 @@
     <style>
       .navbar {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Ensure Login button stays white with black border on hover */
-      .button.is-outlined.is-black.has-text-black:hover {
-        background-color: white !important;
-        border-color: black !important;
-        color: black !important;
-      }
-
-      /* Animation for the arrow */
-      .button::after {
-        content: "→";
-        position: absolute;
-        left: -20px;
-        opacity: 0;
-        transition: left 0.3s ease, opacity 0.3s ease;
-        font-size: 20px;
-      }
-
-      /* On hover, show the arrow and shift the text to the right */
-      .button:hover::after {
-        opacity: 1;
-        left: 10px;
-      }
-
-      /* On hover, shift text to the right and remove border-radius */
-      .button {
-        position: relative;
-        padding-left: 20px; /* Initial padding for text */
-        transition: padding-left 0.3s ease, border-radius 0.3s ease; /* Smooth transition for padding and border-radius */
-      }
-
-      .button:hover {
-        padding-left: 40px; /* Shift text to the right */
-        border-radius: 0px; /* Remove rounded corners */
       }
     </style>
   </head>
@@ -57,7 +22,7 @@
     >
       <div class="navbar-brand">
         <a class="navbar-item" href="Dashboard.html">
-          <img src="public/logo.svg" />
+          <img />
         </a>
 
         <a
@@ -75,21 +40,16 @@
 
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">Home</a>
-          <a class="navbar-item">Profile</a>
-          <a class="navbar-item">Settings</a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">More</a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">About</a>
-              <a class="navbar-item">Contact</a>
-              <hr class="navbar-divider" />
-              <a class="navbar-item">Report an issue</a>
-            </div>
-          </div>
+          <a class="navbar-item">Contact Us</a>
         </div>
+
+        <button class="button is-outlined is-black has-text-black">
+          Login
+        </button>
+        <!-- Get Started Button (black background, white text) -->
+        <button class="button is-black has-text-white">
+          Get started for free
+        </button>
 
         <div class="navbar-end">
           <div class="navbar-item">
@@ -98,9 +58,9 @@
                 href="Login.html"
                 class="button is-outlined is-black has-text-black"
               >
-                Login
+                <strong>Login</strong>
               </a>
-              <a href="SignUp.html" class="button is-black has-text-white"
+              <a href="Login.html" class="button is-black has-text-white"
                 >Get started for free</a
               >
             </div>

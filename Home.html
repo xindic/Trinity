@@ -1,24 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Trinity</title>
-    <link href="app.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Home</title>
+    <style>
+      /* Custom button and description styles */
+      .buttons .button {
+        border: none; /* Remove the border */
+        outline: none; /* Remove the outline */
+        box-shadow: none; /* Remove any shadow */
+        transition: background-color 0.3s ease, border-radius 0.3s ease; /* Transition for background-color and border-radius */
+        background-color: transparent; /* Default background color for buttons */
+        color: black; /* Default text color */
+        border-radius: 50px; /* Start with rounded corners */
+      }
+
+      .buttons .button:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Hover effect for "Design" button */
+      .buttons .button-design:hover {
+        background-color: #c76d7e; /* Pink */
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .button-build:hover {
+        background-color: #4a90e2; /* Blue */
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .button-jam:hover {
+        background-color: #f5a623; /* Orange */
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .button-present:hover {
+        background-color: #50e3c2; /* Green */
+        color: white;
+        border-radius: 5px;
+      }
+
+      .buttons .is-selected {
+        background-color: rgb(233, 233, 233); /* Gray background */
+        outline: none;
+        color: black; /* White text */
+        pointer-events: none; /* Disable hover effect */
+      }
+
+      /* Set the background color to white for the entire body */
+      body {
+        background-color: white;
+      }
+
+      /* Ensure hero section has a transparent background */
+      .hero.is-primary {
+        background-color: transparent;
+      }
+
+      /* Description text styling */
+      .description {
+        margin-top: 20px;
+        font-size: 1.25rem;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <div id="container">
-      <div id="content">
-        <h1>
-          <div style="float:left margin-bottom:20px">3D Triangle</div>
-          <div class="stage">
-            <div class="pyramid3d">
-              <div class="triangle side1"></div>
-              <div class="triangle side2"></div>
-              <div class="triangle side3"></div>
-              <div class="triangle side4"></div>
-            </div>
-          </div>
-        </h1>
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-size-1-desktop is-size-3-tablet has-text-black">
+            Think bigger. Launch smarter.
+          </h1>
+          <h2
+            class="subtitle is-size-4-desktop is-size-6-tablet has-text-black"
+          >
+            We empower startups and organizations to plan, collaborate, and
+            accelerate growth—together.
+          </h2>
+          <button class="button is-black is-large has-text-white">
+            Get started for free
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="buttons is-centered mt-5">
+          <button
+            class="button is-rounded button-design"
+            onclick="showDescription('design')"
+          >
+            <strong>Start</strong>
+          </button>
+          <button
+            class="button is-rounded button-build"
+            onclick="showDescription('build')"
+          >
+            <strong>Plan</strong>
+          </button>
+          <button
+            class="button is-rounded button-jam"
+            onclick="showDescription('jam')"
+          >
+            <strong>Discuss</strong>
+          </button>
+          <button
+            class="button is-rounded button-present"
+            onclick="showDescription('present')"
+          >
+            <strong>Present</strong>
+          </button>
+        </div>
+        <!-- Description Text -->
+        <div id="description" class="description has-text-centered"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <!-- Quotation section with left alignment using Bulma -->
+      <div class="columns is-vcentered is-centered mt-6">
+        <div class="column is-half has-text-left">
+          <!-- Icon is vertically above text, aligned to the left -->
+          <i class="fa-solid fa-quote-left fa-6x" style="color: #6369d1"></i>
+          <h1
+            class="title is-size-1-desktop is-size-3-tablet has-text-black mt-4"
+          >
+            Everything startups need to plan, collaborate, and grow is available
+            in one place.
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function showDescription(button) {
+        // Reset all buttons and remove the selected state
+        const buttons = document.querySelectorAll(".button");
+        buttons.forEach((btn) => {
+          btn.classList.remove("is-selected");
+        });
+
+        // Set the selected button as gray and disable hover
+        const selectedButton = document.querySelector(`.button-${button}`);
+        selectedButton.classList.add("is-selected");
+
+        // Display the description text based on the clicked button
+        let descriptionText = "";
+        if (button === "design") {
+          descriptionText =
+            "Launch and manage your startup ideas with your team, all in one collaborative space.";
+        } else if (button === "build") {
+          descriptionText =
+            "Plan your startup’s journey with clear, actionable steps and shared resources.";
+        } else if (button === "jam") {
+          descriptionText =
+            "Engage in discussions, exchange feedback, and refine your startup vision with your team.";
+        } else if (button === "present") {
+          descriptionText =
+            "Present your startup ideas with dynamic pitch decks, visual tools, and collaborative features.";
+        }
+
+        // Update the description
+        document.getElementById("description").textContent = descriptionText;
+      }
+    </script>
   </body>
 </html>

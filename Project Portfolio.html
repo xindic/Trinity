@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Portfolio</title>
+    <!-- Link to Bulma CSS Framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom Styles */
+      body {
+        background-color: #f4f7fc;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .hero {
+        background-color: #4a90e2;
+        color: white;
+        padding: 5rem 0;
+      }
+
+      .hero .title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+
+      .columns .column {
+        display: flex;
+        justify-content: center;
+      }
+
+      .card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-image img {
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+        height: 200px;
+        width: 100%;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+        background-color: #ffffff;
+        border-radius: 0 0 15px 15px;
+      }
+
+      .card .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4a90e2;
+        transition: color 0.3s ease;
+      }
+
+      .card .title:hover {
+        color: #2a6496;
+      }
+
+      .card .subtitle {
+        font-size: 1rem;
+        color: #777;
+        margin-top: 1rem;
+      }
+
+      .button {
+        padding: 12px 24px;
+        font-weight: bold;
+      }
+
+      .button.is-link {
+        background-color: #4a90e2;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .button.is-link:hover {
+        background-color: #357ab7;
+      }
+
+      footer {
+        background-color: #333;
+        padding: 2rem 0;
+      }
+
+      footer .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      footer .content a {
+        font-weight: bold;
+      }
+
+      footer .content a:hover {
+        color: #4a90e2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Hero Section -->
+    <section class="hero is-primary is-medium">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">Our Project Portfolio</h1>
+          <h2 class="subtitle">
+            Discover the innovative work we've delivered to our clients.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Portfolio Section -->
+    <div class="section">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Featured Projects</h2>
+        <div class="columns is-multiline">
+          <!-- Project 1 -->
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image">
+                  <img
+                    src="https://via.placeholder.com/400x300"
+                    alt="Project Image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title">
+                  <a href="https://example.com/project1" target="_blank"
+                    >Project Title 1</a
+                  >
+                </p>
+                <p class="subtitle">
+                  A brief description of the project, showcasing the solution
+                  provided and its success.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image">
+                  <img
+                    src="https://via.placeholder.com/400x300"
+                    alt="Project Image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title">
+                  <a href="https://example.com/project2" target="_blank"
+                    >Project Title 2</a
+                  >
+                </p>
+                <p class="subtitle">
+                  A brief description of the project, highlighting key features
+                  and the impact it had.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image">
+                  <img
+                    src="https://via.placeholder.com/400x300"
+                    alt="Project Image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title">
+                  <a href="https://example.com/project3" target="_blank"
+                    >Project Title 3</a
+                  >
+                </p>
+                <p class="subtitle">
+                  A brief description of the project, emphasizing its creativity
+                  and client satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Projects Button -->
+        <div class="has-text-centered">
+          <a
+            href="https://example.com/projects"
+            class="button is-link is-large"
+          >
+            See More Projects
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content">
+        <p>
+          <strong>Service-Based Startup</strong> by
+          <a href="https://example.com">Your Company Name</a>. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

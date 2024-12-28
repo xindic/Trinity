@@ -1,95 +1,18 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 
-.stage {
-  -webkit-transform: scale(1.85);
-  transform: scale(0.85);
-  float: right;
-  margin-right: 120px;
-  margin-top: 20px;
-  width: 0px;
-  height: 0px;
-  position: relative;
-  -webkit-perspective: 1200px;
-  -webkit-perspective-origin: 50% 50%;
-  perspective: 1200px;
-  perspective-origin: 50% 50%;
-}
-
-.pyramid3d {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: rotateX(75deg) rotate(65deg);
-  transform: rotateX(75deg) rotate(65deg);
-  -webkit-animation: turnPyramid 10s linear infinite;
-  animation: turnPyramid 10s linear infinite;
-}
-
-.triangle {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  width: 0;
-  height: 0;
-  background: none;
-  border-style: solid;
-  border-width: 176px 75px 0 75px;
-}
-
-.triangle:before {
-  border-style: solid;
-  border-width: 176px 75px 0 75px;
-  content: "";
-  position: absolute;
-  height: 0;
-  width: 0;
-}
-
-.side1 {
-  -webkit-transform: translateX(0) rotateY(115.2deg) rotateZ(90deg);
-  transform: translateX(0) rotateY(115.2deg) rotateZ(90deg);
-}
-
-.side2 {
-  -webkit-transform: translateX(150px) rotateY(64.8deg) rotateZ(90deg);
-  transform: translateX(0) rotateY(115.2deg) rotateZ(90deg);
-}
-
-.side3 {
-  -webkit-transform: translateZ(0) rotateY(115.2deg);
-  transform: translateZ(0) rotateY(115.2deg);
-}
-
-.side4 {
-  -webkit-transform: translateY(150px) rotateX(115.2deg);
-  transform: translateY(150px) rotateX(115.2deg);
-}
-
-.side1:before {
-  border-color: rgba(115, 115, 0, 0.3) transparent transparent transparent;
-}
-
-.side2:before {
-  border-color: rgba(20, 90, 255, 0.3) transparent transparent transparent;
-}
-
-.side3:before {
-  border-color: rgba(255, 0, 0, 0.3) transparent transparent transparent;
-}
-
-.side4:before {
-  border-color: rgba(0, 2555, 255, 0.3) transparent transparent transparent;
-}
-
-@-webkit-keyframes turnPyramid {
-  100% {
-    -webkit-transform: rotateX(75deg) rotate(425deg);
-  }
-}
-
-@keyframes turnPyramid {
-  100% {
-    -webkit-transform: rotateX(75deg) rotate(425deg);
-  }
+:root {
+  --bulma-primary-h: 237deg;
+  --bulma-primary-s: 54%;
+  --bulma-primary-l: 60%;
+  --bulma-link-h: 198deg;
+  --bulma-link-l: 70%;
+  --bulma-info-h: 0deg;
+  --bulma-info-s: 0%;
+  --bulma-info-l: 87%;
+  --bulma-success-h: 162deg;
+  --bulma-success-s: 49%;
+  --bulma-success-l: 67%;
+  --bulma-danger-h: 349deg;
+  --bulma-danger-s: 45%;
+  --bulma-danger-l: 60%;
 }

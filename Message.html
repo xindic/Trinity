@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Messaging</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Chat Container -->
+    <div class="columns is-variable is-8 is-centered mt-5">
+      <!-- Left Side - User List -->
+      <div class="column is-3">
+        <div class="box">
+          <h3 class="title is-4">Users</h3>
+          <ul>
+            <li><a href="#" class="has-text-dark">John Doe</a></li>
+            <li><a href="#" class="has-text-dark">Jane Smith</a></li>
+            <li><a href="#" class="has-text-dark">Michael Johnson</a></li>
+            <li><a href="#" class="has-text-dark">Sarah Lee</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Side - Chat Window -->
+      <div class="column is-8">
+        <div class="box">
+          <h3 class="title is-4">Chat with John Doe</h3>
+
+          <!-- Chat Messages -->
+          <div
+            class="content"
+            id="messages"
+            style="height: 300px; overflow-y: scroll"
+          >
+            <!-- Sent message -->
+            <div class="message is-sent">
+              <div class="message-body is-small">
+                Hey, how's it going?
+                <br />
+                <span class="has-text-grey is-size-7">10:45 AM</span>
+              </div>
+            </div>
+
+            <!-- Received message -->
+            <div class="message is-received">
+              <div class="message-body is-small">
+                I'm good, thanks! How about you?
+                <br />
+                <span class="has-text-grey is-size-7">10:46 AM</span>
+              </div>
+            </div>
+
+            <!-- Sent message -->
+            <div class="message is-sent">
+              <div class="message-body is-small">
+                I'm doing great! Working on a new project.
+                <br />
+                <span class="has-text-grey is-size-7">10:47 AM</span>
+              </div>
+            </div>
+
+            <!-- Received message -->
+            <div class="message is-received">
+              <div class="message-body is-small">
+                That's awesome! Tell me more about it.
+                <br />
+                <span class="has-text-grey is-size-7">10:48 AM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Input -->
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input
+                class="input"
+                type="text"
+                placeholder="Type a message..."
+              />
+            </div>
+            <div class="control">
+              <button class="button is-primary">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bulma JS (optional for interaction, not necessary for basic usage) -->
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
+  </body>
+</html>
