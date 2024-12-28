@@ -89,21 +89,16 @@ php artisan serve
 **1. User Management**
 
 Sign Up/Sign In: Users can register or log in using basic credentials.
-User Profile: Includes fields for Username, Email, Bio, and link to their associated startup (with position/title).
+User Profile: Includes fields for Username, Email, Bio.
 
 **2. Startup Profile**
 
 Startup Creation: Users can create and manage startup organizations.
 Profile Details: Includes Logo, Name, Description, Industries, and Funding Raised.
-Timeline Feature: Hardcoded and customizable milestones.
 
 Sections:
 
-- Posts Section
-- Employee Section (roles and positions)
-- Project Portfolio (for service-based startups)
-- Product Showcase (for product-based startups)
-- Hybrid Section (both Portfolio and Showcase for hybrid startups).
+- Members Section to manage employees
 
 **3. Feed**
 
@@ -111,13 +106,9 @@ Post Creation: Users can create posts with optional image attachments and Markdo
 Interactions: Like, comment, save, and share posts.
 Feed Visibility: Public visibility, allowing even anonymous users to view posts.
 
-**4. Search**
-
-Startup Search: Filter by Industry Type and Location.
-
 **5. Messaging**
 
-Allows users to send private messages to others and share posts.
+Allows users to send private messages to others in an email format.
 
 **6. Sharable Profiles and Posts**
 
@@ -129,16 +120,5 @@ Users can join startups and have different roles:
 Owner: Manages invites and requests.
 Editor: Can create posts and manage content.
 Viewer: Read-only access.
-Employee Section: Displays users with their roles and positions.
 
-**8. Subscriptions and Notifications**
-
-Automatic Subscriptions: Users are auto-subscribed to organizations they belong to.
-Optional Subscriptions: Users can follow other startups for updates.
-
-**9. Event Management**
-
-Event Creation: Special post type for events with detailed information (Title, Description, Start/End time, Location).
-Event Display: Events appear in profiles and feeds.
-Event Subscription: Users can RSVP and receive notifications.
-Event Attendees: Lists attendees and headcount.
+Members Section: Displays users with their roles and positions.

@@ -72,7 +72,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column; /* Stack elements vertically */
       }
 
       /* Description text styling */
@@ -85,39 +84,34 @@
       /* Quote Section Enhancements */
       .quote-container {
         position: relative;
-        padding: 15px 20px; /* Reduced padding */
+        padding: 30px 20px;
         background: rgba(240, 240, 240, 0.8);
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 80%; /* Limit width to make it more compact */
-        margin-top: 20px;
       }
 
+      .quote-container {
+        bottom: 20px; /* Distance from the bottom */
+        left: 20px; /* Distance from the left */
+        background: rgba(240, 240, 240, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        color: black; /* Ensures text is black */
+      }
+
+      /* Custom Quote Divider */
       .quote-divider {
-        margin: 15px 0;
+        margin: 20px 0;
         height: 2px;
         background: #6369d1;
         width: 50px;
       }
 
+      /* Custom positioning for the quote icon */
       .quote-container i {
-        position: absolute;
-        top: -20px;
-        left: -15px;
+        top: -25px;
+        left: -20px;
         opacity: 0.8;
-      }
-
-      .quote-container h1 {
-        font-size: 1.5rem; /* Reduced font size */
-      }
-
-      .quote-container p {
-        font-size: 1rem; /* Reduced font size */
-      }
-
-      .quote-container {
-        background: rgba(240, 240, 240, 0.8);
-        color: black;
       }
     </style>
   </head>
@@ -125,12 +119,10 @@
     <section class="hero is-primary is-fullheight">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title is-size-1-desktop is-size-3-tablet has-text-black">
+          <h1 class="title is-size-5 has-text-black">
             Think bigger. Launch smarter.
           </h1>
-          <h2
-            class="subtitle is-size-4-desktop is-size-6-tablet has-text-black"
-          >
+          <h2 class="subtitle is-size-8 is-size-8-tablet has-text-black">
             We empower startups and organizations to plan, collaborate, and
             accelerate<br />
             growth—together.
@@ -139,53 +131,78 @@
             Get started for free
           </button>
         </div>
+      </div>
 
-        <div class="quote-container has-text-centered">
-          <i class="fa-solid fa-quote-left fa-1x" style="color: #6369d1"></i>
-          <h1
-            class="title is-size-3-desktop is-size-5-tablet has-text-black mt-4"
-          >
-            Everything startups need to plan, collaborate, and grow is available
-            in one place.
-          </h1>
-          <div class="quote-divider"></div>
-          <p class="subtitle is-size-5 mt-4 has-text-grey-dark">
-            Collaborate smarter, execute faster, and achieve more with our
-            platform tailored for innovators and builders.
-          </p>
+      <br />
+
+      <div class="columns absolute">
+        <div class="column is-half has-text-left">
+          <div class="quote-container">
+            <i class="fa-solid fa-quote-left fa-2x" style="color: #6369d1"></i>
+            <h1 class="title is-size-5 has-text-black mt-4">
+              Everything startups need to plan, collaborate, and grow is
+              available in one place.
+            </h1>
+            <div class="quote-divider"></div>
+            <p class="subtitle is-size-7 mt-4 has-text-grey-dark">
+              Collaborate smarter, execute faster, and achieve more with our
+              platform tailored for innovators and builders.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="buttons is-centered mt-5">
-          <button
-            class="button is-rounded button-design"
-            onclick="showDescription('design')"
-          >
-            <strong>Start</strong>
-          </button>
-          <button
-            class="button is-rounded button-build"
-            onclick="showDescription('build')"
-          >
-            <strong>Plan</strong>
-          </button>
-          <button
-            class="button is-rounded button-jam"
-            onclick="showDescription('jam')"
-          >
-            <strong>Discuss</strong>
-          </button>
-          <button
-            class="button is-rounded button-present"
-            onclick="showDescription('present')"
-          >
-            <strong>Present</strong>
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-size-5 has-text-black">
+            Think bigger. Launch smarter.
+          </h1>
+          <h2 class="subtitle is-size-8 is-size-8-tablet has-text-black">
+            We empower startups and organizations to plan, collaborate, and
+            accelerate<br />
+            growth—together.
+          </h2>
+          <button class="button is-black is-large has-text-white">
+            Get started for free
           </button>
         </div>
-        <div id="description" class="description has-text-centered"></div>
+      </div>
+
+      <!-- Quotation Section Positioned at the Bottom Left -->
+      <div class="quote-container box is-shadowless">
+        <i class="fa-solid fa-quote-left fa-2x" style="color: #6369d1"></i>
+        <h1 class="title is-size-5 has-text-black mt-4">
+          Everything startups need to plan, collaborate, and grow is available
+          in one place.
+        </h1>
+        <div class="quote-divider"></div>
+        <p class="subtitle is-size-7 mt-4 has-text-grey-dark">
+          Collaborate smarter, execute faster, and achieve more with our
+          platform tailored for innovators and builders.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="columns is-vcentered is-centered mt-6">
+        <div class="column is-half has-text-left">
+          <div class="quote-container">
+            <i class="fa-solid fa-quote-left fa-3x" style="color: #6369d1"></i>
+            <h1
+              class="title is-size-1-desktop is-size-3-tablet has-text-black mt-4"
+            >
+              Everything startups need to plan, collaborate, and grow is
+              available in one place.
+            </h1>
+            <div class="quote-divider"></div>
+            <p class="subtitle is-size-5 mt-4 has-text-grey-dark">
+              Collaborate smarter, execute faster, and achieve more with our
+              platform tailored for innovators and builders.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
