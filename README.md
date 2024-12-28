@@ -41,6 +41,8 @@ PHP 8.0+ (preferably 8.2)
 Composer
 MySQL or any supported relational database
 
+### Steps
+
 **1. Clone the repository**
 
 ```plaintext
