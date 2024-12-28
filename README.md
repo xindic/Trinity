@@ -35,7 +35,7 @@ The platform uses Laravel as the backend framework, providing a structured way t
 
 ## Setup and Run instructions
 
-**Prerequisites**
+### Prerequisites
 
 PHP 8.0+ (preferably 8.2)
 Composer
