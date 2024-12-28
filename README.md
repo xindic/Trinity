@@ -161,11 +161,7 @@ git remote add origin https://github.com/yourusername/your-repository.git
 git pull origin main
 ```
 
-**12. Start Application**
-
-Your Laravel application is now live and should be accessible via the configured domain
-
-**13. Create a Custom `.htaccess` File for Laravel**
+**12. Create a Custom `.htaccess` File for Laravel**
 
 Ensure you have a custom `.htaccess` file in the `public` directory to properly handle URL routing and redirects for Laravel.
 
@@ -193,6 +189,10 @@ RewriteRule ^(.*)$ /public/$1 [L]
 ```
 
 This `.htaccess` file ensures that Laravel's routing works properly, even when the application is placed in the root directory or a subdirectory. It also redirects all requests to the `public` directory and handles Laravel's routing by forwarding requests to `index.php`.
+
+**13. Start Application**
+
+Your Laravel application is now live and should be accessible via the configured domain
 
 ## Documented Features
 
